@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9C93688-1AEF-4DCE-A96D-90BA196D259B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.Contracts</RootNamespace>
+    <AssemblyName>Domain.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IAdminService.cs" />
+    <Compile Include="IAnalyzerService.cs" />
+    <Compile Include="ILoginService.cs" />
+    <Compile Include="ISupplierService.cs" />
+    <Compile Include="ITokenService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Library\Common.Library.csproj">
+      <Project>{3d34faf6-9138-4ed8-b3f4-c53df7ae0e90}</Project>
+      <Name>Common.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Contracts\Data.Contracts.csproj">
+      <Project>{e91d57ce-b6ff-40c9-985c-ba5374e7a53f}</Project>
+      <Name>Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
+      <Project>{eef37a87-d505-4afa-af35-3852d1c44130}</Project>
+      <Name>Data.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Implementations\Data.Implementations.csproj">
+      <Project>{0b94c9da-2858-4581-ac15-0850a324f4ff}</Project>
+      <Name>Data.Implementations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Entities\Domain.Entities.csproj">
+      <Project>{9a96fb87-c126-4969-bc02-c00c4302883c}</Project>
+      <Name>Domain.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
